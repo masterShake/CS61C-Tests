@@ -27,12 +27,12 @@ disasmtest: mips mipscode/insts
 	@diff test.trace $(addsuffix .trace, $(basename $<)) \
           && echo "$@ PASSED" || echo "$@ FAILED"
 
-runtest: mips insts_test rt3_test rt13_test rt25_test
+runtest: mips insts_test rt3_test rt13_test rt25_test tests_test
 	@echo "Tests Complete"
 
 clean:
 	rm -f mips $(addsuffix .o, $(addprefix mipscode/,  $(ASM_TESTS))) \
-              *.dump *.trace *.out test1 mipscode/test-disasm.dump
+              *.dump *.trace *.out test1 test2 mipscode/test-disasm.dump
 	rm -rf mips.dSYM
 
 cleanall: clean
@@ -40,6 +40,9 @@ cleanall: clean
 
 test1: part1.c test1.c
 	gcc -o test1 part1.c test1.c
+
+test2: test2.c
+	gcc -o test2 test2.c
 
 mipscode/test-disasm.dump: mipscode/test-disasm.s
 	java -jar Mars.jar a dump .text HexText mipscode/test-disasm.dump \
