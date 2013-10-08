@@ -9,7 +9,7 @@ to run the tests:
 Project 2-1
 -----------
 
-Replace the proviced Makefile with the Makefile in this repository. Extra tests
+Replace the provided Makefile with the Makefile in this repository. Extra tests
 can be run with the following command:
 
 ```
@@ -24,5 +24,4 @@ Project 2-2
 
 Extra tests are in `mipscode/tests.s`. It should print "All tests passed",
 otherwise it will print the number of the failed test. These tests are
-incremental, which means every test needs all previous tests to pass before it
-will pass.
+incremental, which means every test requires all previous tests to pass.
