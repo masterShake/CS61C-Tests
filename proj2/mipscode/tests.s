@@ -673,7 +673,7 @@ pass4:
 
         # test #84: jr
         ori   $30, $0, 84
-        la    $3 backjr
+        la    $3, backjr
         jr    $3
         j     fail
 passjr:
